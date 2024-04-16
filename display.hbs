@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>realBase | console</title>
+    <link rel="stylesheet" href="css/display.css">
+    <link rel="icon" href="images/logo.png" type="images/png">
+</head>
+<body>
+    <h1>Enter your table Data</h1>
+    
+    <form action="/display" method="POST">
+        <div class="box">
+            <div class="table">
+                <table id="dataTable">
+                    <thead>
+                        <tr>
+                            {{#each columns}}
+                                <th>{{this.Field}}</th>
+                            {{/each}}
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            {{#each columns}}
+                                <td><input type="text" name="{{this.Field}}" required></td>
+                            {{/each}}
+                        </tr>
+                    </tbody>
+                </table>
+                <button type="submit" class="submit-button">Apply</button>
+                
+                <input type="hidden" id="currentTableInput" name="currentTable" value="{{ selectedTable }}">
+            </div>
+
+        </div>
+    </form>
+    <form action = "/getTableData" method = "POST">
+        <button type="button" id="displayTablesButton" class="display-tables-button">Display Table</button>
+    </form>
+
+    <form action = "/deleteTable" method = "POST">
+        <input type="hidden" id="currentTableInput" name="currentTable" value="{{ selectedTable }}">
+        <button type="submit" id="deleteButton" class="delete-tables-button" >Delete this table</button>
+    </form>
+
+    <script>
+        // JavaScript code goes here
+
+        document.getElementById('displayTablesButton').addEventListener('click', function() {
+            // Fetch table data from the server
+            fetch('/getTableData', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ currentTable: document.getElementById('currentTableInput').value })
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Display the table
+                displayTable(data);
+            })
+            .catch(error => {
+                console.error('Error fetching table data:', error);
+            });
+        });
+
+        function displayTable(tableData) {
+            // Clear existing table rows
+            const tableBody = document.querySelector("#dataTable tbody");
+            tableBody.innerHTML = '';
+
+            // Populate the table with the fetched data
+            tableData.forEach(rowData => {
+                const row = document.createElement('tr');
+                Object.values(rowData).forEach(value => {
+                    const cell = document.createElement('td');
+                    cell.textContent = value;
+                    row.appendChild(cell);
+                });
+                tableBody.appendChild(row);
+            });
+        }
+    </script> 
+</body>
+</html>

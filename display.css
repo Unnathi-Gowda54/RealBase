@@ -1,0 +1,135 @@
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #022836;
+}
+
+h1 {
+    text-align: center;
+    color: #9acbff;
+    font-weight: 400;
+    margin-top: 50px;
+    margin-bottom: 30px ;
+
+}
+
+.box {
+    margin: 20px auto;
+    width: 100%;
+    max-width: 800px;
+    background-color: #9acbff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.table {
+    margin-top: 20px;
+}
+
+#dataTable {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#dataTable th, #dataTable td {
+    border: 1px solid #243240;
+    padding: 10px;
+    text-align: left;
+}
+
+#dataTable th {
+    align-items: center;
+    background-color: #9acbff;
+}
+
+#dataTable tbody tr:nth-child(even) {
+    align-items: center;
+    background-color: #9acbff;
+}
+
+
+input[type="text" i] {
+    width: calc(100% - 16px);
+    padding: 5px;
+    background-color: #9acbff;
+    border:none;
+    outline: none;
+}
+
+.add {
+    display: inline-block;
+    padding: 8px 16px;
+    color: #9acbff;
+    background-color: #022836;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.add:hover {
+    background-color: #9acbff;
+    color:#022836;
+    border: 1.5px solid #022836;
+}
+
+
+.submit-button {
+    display: block;
+    margin-top: 20px;
+    margin-left: 730px;
+    padding: 10px 20px;
+    background-color: #022836;
+    color: #9acbff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+    background-color: #9acbff;
+    color:#022836;
+    border: 1.5px solid #022836;
+}
+
+.display-tables-button {
+    display: block;
+    margin-top: 50px;
+    margin-left: 983px;
+    padding: 10px 20px;
+    background-color: #022836;
+    color: #9acbff;
+    border: 1px solid #9acbff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.display-tables-button:hover {
+    background-color: #9acbff;
+    color: #022836;
+    border: 1.5px solid #022836;
+}
+
+.delete-tables-button {
+    display: block;
+    margin-top: 20px;
+    margin-left: 968px;
+    padding: 10px 20px;
+    background-color: #022836;
+    color: #9acbff;
+    border: 1px solid #9acbff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-bottom: 50px;
+}
+
+.delete-tables-button:hover {
+    background-color: #9acbff;
+    color: #022836;
+    border: 1.5px solid #022836;
+}

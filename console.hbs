@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>realBase | console</title>
+    <link rel="stylesheet" href = "css/console.css">
+    <link rel = "icon" href = "images/logo.png" type = "images/png">
+</head>
+<body>
+    <nav>
+      <div class = "logo">
+        <img class = "logoimg" src = "images/logo.png"> 
+        <a class = "logoNameA">realBase</a>
+      </div>  
+      
+      <button class = "aboutA" >
+        <a href = "/about">about realBase</a>
+      </button>
+      
+      
+      <div class="userInitials">
+        {{firstChar Name}}
+    </div>
+
+    </nav>
+
+    <div class = "imageBox"> 
+      <img src = "images/create.png" alt = "creating">
+    </div>
+
+    <button class = "console-button" id="openModal" onclick="projectName()"> <a>+ add your table</a></button>
+    <button class = "table-button" onclick="tablesPage()"> <a> ---> Your Tables </a></button>
+    
+    <form id = "myForm" action = "/console" method="POST"> 
+      <div id="myModal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <p>Provide your table name:</p>
+          <input class = "recieve" type="text" id="nameInput" name = "nameInput">
+          <div class = "container">
+              <h1> Add attributes to your table </h1>
+          <div class = "wrap">  
+              <a href = "#" class = "add">&plus;</a>
+          </div>  
+          <div class="input-group"> </div>
+          </div>
+          <button type = "submit" class = "submit" id="submitBtn"> <a> Apply </a> </button>
+        </div>
+      </div>
+    </form>
+
+  <script src = "script.js"> </script>
+
+</body>
+</html>

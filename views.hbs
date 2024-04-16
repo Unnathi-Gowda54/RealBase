@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>realBase | console</title>
+    <link rel="stylesheet" href="css/views.css">
+    <link rel="icon" href="images/logo.png" type="images/png">
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <img class="logoimg" src="images/logo.png">
+            <a>realBase</a>
+        </div>
+        <div class="search">
+            <input type="text" id="searchInput" placeholder="Search tables...">
+        </div>
+
+        <div class="userInitials">
+            {{firstChar Name}}
+        </div>
+    </nav>
+
+    <h1>Your tables:</h1>
+
+    <form id="tableForm" action="/views" method="POST">
+        <input type="hidden" id="currentTableInput" name="currentTable" value="">
+        {{#each tableNames}}
+            <button type="submit" class="select-button" onclick="selectTable('{{this}}')">{{this}}</button>
+        {{/each}}
+    </form>
+    
+    <script>
+        function selectTable(tableName) {
+            document.getElementById('currentTableInput').value = tableName;
+            document.getElementById('tableForm').submit();
+        }
+
+        document.getElementById('searchInput').addEventListener('input', function () {
+            const searchValue = this.value.toLowerCase();
+            const buttons = document.querySelectorAll('.select-button');
+
+            buttons.forEach(function (button) {
+                const buttonText = button.textContent.toLowerCase();
+                if (buttonText.includes(searchValue)) {
+                    button.style.display = 'inline-block';
+                } else {
+                    button.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

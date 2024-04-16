@@ -1,0 +1,114 @@
+* {
+    background-color: #022836;
+    margin: 0px;
+    padding: 0px;
+}
+
+nav {
+    width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    padding: 0px 50px;
+    position: fixed;
+    background-color: #9acbff;
+    top: 0;
+    z-index: 1;
+}  
+
+.logo {
+    background-color: #9acbff;
+}
+
+.logoimg {
+    width: 50px;
+    height: 40px;
+    background-color: #9acbff;
+    margin-top: 10px;   
+    /* margin-right: 2px;
+    margin-left: 30px; */
+    align-items: center;
+}
+.logo a {
+    font-size: 34px;
+    font-weight:600;
+    letter-spacing: 1.5px;
+    color: #022836;
+    cursor: pointer;
+    margin-left: 10px;
+    margin-right: 700px;
+    background-color: #9acbff;
+}
+
+
+.search {
+    position: relative;
+    background-color: #9acbff;
+}
+
+#searchInput {
+    padding: 8px;
+    border: 1px solid #9acbff; /* Set border color to #9acbff */
+    border-radius: 10px; /* Set border-radius for rounded corners */
+    font-size: 16px;
+    color: #9acbff;
+    outline: none;
+}
+
+#searchInput:hover {
+    background-color: #9acbff; /* Change border color on focus */
+    border-color: #022836;
+    color: #022836;
+}
+
+.userInitials {
+    position: fixed;
+    top: 15px; 
+    right: 9px; 
+    width: 40px;
+    height: 40px;
+    background-color: #022836;
+    color: #9acbff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 60px;
+    margin-right: 20px;
+}
+
+h1 {
+    padding-top: 40px;
+    margin-top: 100px;
+    margin-left: 100px;
+    font-size: 35px;
+    font-weight: 500;
+    color:#9acbff;
+    text-decoration:none;
+    font-family:cursive;
+}
+
+.select-button {
+    display: block;
+    margin-bottom: 10px;
+    margin-left: 200px;
+    margin-top: 20px;
+    padding: 20px 50px;
+    background-color: #022836; 
+    color: #9acbff;
+    border-radius: 5px;
+    border: 2px solid #9acbff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 16px;
+    width: 300px;
+    align-items: center;
+}
+
+.select-button:hover {
+    background-color: #9acbff;
+    content: "gdsf";
+    color:#022836
+}
